@@ -22,6 +22,35 @@ const internQuestions = ["What's the name of this intern?", "The intern's id?", 
 
 var teamMembers = []
 
+function getOption(){
+    inquirer.prompt([
+        {
+            type: "input",
+
+            message: "Would you like to add an engineer, an intern, or finish building the team? \n" +
+            "Type 'engineer' to add an engineer, 'intern' to add an intern, or 'finish' to finish building the team.",
+
+            name: "selectedOption"
+        }
+    ]).then((response) => {
+        
+        if (response.selectedOption === "engineer") {
+            addEngineer()
+        } 
+        else if (response.selectedOption === "intern") {
+            addIntern()
+        }
+        else if (response.selectedOption === "finish"){
+            console.log("Very well! The team is complete.")
+            // HTML logic
+        }
+        else{
+            console.log("Sorry, we didn't catch that. Please try again");
+            getOption()
+        }
+    })
+}
+
 function addEngineer() {
 
 inquirer
@@ -88,6 +117,10 @@ inquirer
   ])
   .then((response) => {
     const teamManager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNo)
+
+    teamMembers.push(teamManager)
+
+
 
 
   })
