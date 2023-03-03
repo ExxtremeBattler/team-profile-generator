@@ -16,6 +16,10 @@ const render = require("./src/page-template.js");
 const managerQuestions = ["What is the manager of this project's name?", "What is that manager's id?", "The manager's email?",
 "Their office no. ?"]
 
+const engineerQuestions = ["What's the name of this engineer?", "The engineer's id?", "The engineer's email?", "The engineer's github?"]
+
+const internQuestions = ["What's the name of this intern?", "The intern's id?", "The intern's email?", "What school does this intern attend?"]
+
 
 
 function init() {
