@@ -20,6 +20,42 @@ const engineerQuestions = ["What's the name of this engineer?", "The engineer's 
 
 const internQuestions = ["What's the name of this intern?", "The intern's id?", "The intern's email?", "What school does this intern attend?"]
 
+var teamMembers = []
+
+function addEngineer() {
+
+inquirer
+  .prompt([
+    {
+      type: "input",
+      message: engineerQuestions[0],
+      name: "engineerName",
+    },
+    {
+      type: "input",
+      message: engineerQuestions[1],
+      name: "engineerId",
+    },
+    {
+      type: "input",
+      message: engineerQuestions[2],
+      name: "engineerEmail",
+    },
+    {
+      type: "input",
+      message: engineerQuestions[3],
+      name: "engineerGithub", 
+    },
+  ])
+  .then((response) => {
+
+    let engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub)
+
+    teamMembers.push(engineer)
+
+  } 
+)}
+
 
 
 function init() {
@@ -27,55 +63,34 @@ function init() {
 console.log("Welcome to the Team Profile Generator!");
 
 
-// inquirer
-//   .prompt([
-//     {
-//       type: "input",
-//       message: questions[0],
-//       name: "title",
-//     },
-//     {
-//       type: "input",
-//       message: questions[1],
-//       name: "description",
-//     },
-//     {
-//       type: "input",
-//       message: questions[2],
-//       name: "installation",
-//     },
-//     {
-//       type: "input",
-//       message: questions[3],
-//       name: "usage", 
-//     },
-//     {
-//       type: "input",
-//       message: questions[4],
-//       name: "contributors", 
-//     },
-//     {
-//       type: "input",
-//       message: questions[5],
-//       name: "tests", 
-//     },
-//     {
-//       type: "input",
-//       message: questions[6],
-//       name: "license", 
-//     },
-//     {
-//       type: "input",
-//       message: questions[7],
-//       name: "username", 
-//     },
-//     {
-//       type: "input",
-//       message: questions[8],
-//       name: "email", 
-//     },
-//   ])
-//   .then((response) => )
+inquirer
+  .prompt([
+    {
+      type: "input",
+      message: managerQuestions[0],
+      name: "managerName",
+    },
+    {
+      type: "input",
+      message: managerQuestions[1],
+      name: "managerId",
+    },
+    {
+      type: "input",
+      message: managerQuestions[2],
+      name: "managerEmail",
+    },
+    {
+      type: "input",
+      message: managerQuestions[3],
+      name: "managerOfficeNo", 
+    },
+  ])
+  .then((response) => {
+    const teamManager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNo)
+
+
+  })
 
 }
 
