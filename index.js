@@ -86,6 +86,41 @@ inquirer
 )}
 
 
+function addIntern() {
+
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: internQuestions[0],
+        name: "internName",
+      },
+      {
+        type: "input",
+        message: internQuestions[1],
+        name: "internId",
+      },
+      {
+        type: "input",
+        message: internQuestions[2],
+        name: "internEmail",
+      },
+      {
+        type: "input",
+        message: internQuestions[3],
+        name: "internSchool", 
+      },
+    ])
+    .then((response) => {
+  
+      let intern = new intern(response.internName, response.internId, response.internEmail, response.internSchool)
+  
+      teamMembers.push(intern)
+  
+    } 
+  )}
+
+
 
 function init() {
 
