@@ -6,10 +6,15 @@ class Manager extends Employee {
 
     constructor(name, id, email, officeNumber){
         super(name, id, email)
-        this.officeNumber = officeNumber
+        
+        if(typeof officeNumber === "number"){
+            this.officeNumber = officeNumber
+        }
     }
 
 }
+
+module.exports = Manager
 
 // const manager1 = new Manager("Gabriel", 3, "email", 3)
 // const employee1 = new Employee("Bob", 1, "bob@gmail.com")
