@@ -42,7 +42,7 @@ function getOption(){
         }
         else if (response.selectedOption === "finish"){
             console.log("Very well! The team is complete.")
-            // HTML logic
+            buildPage()
         }
         else{
             console.log("Sorry, we didn't catch that. Please try again");
@@ -113,12 +113,21 @@ function addIntern() {
     ])
     .then((response) => {
   
-      let intern = new intern(response.internName, response.internId, response.internEmail, response.internSchool)
+      let intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool)
   
       teamMembers.push(intern)
   
     } 
   )}
+
+  function buildPage() {
+
+    var page = render(teamMembers)
+
+    fs.writeFile(outputPath, page)
+
+    
+  }
 
 
 
@@ -155,10 +164,11 @@ inquirer
 
     teamMembers.push(teamManager)
 
-
-
+    getOption()
 
   })
 
 }
+
+init()
 
