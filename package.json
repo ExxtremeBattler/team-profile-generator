@@ -20,10 +20,10 @@
     "url": "https://github.com/ExxtremeBattler/team-profile-generator/issues"
   },
   "homepage": "https://github.com/ExxtremeBattler/team-profile-generator#readme",
-  "dependencies": {
-    "inquirer": "^9.1.4"
-  },
   "devDependencies": {
-    "jest": "^29.4.3"
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "inquirer": "^6.5.2"
   }
 }
