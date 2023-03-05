@@ -5,8 +5,8 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+// const OUTPUT_DIR = path.resolve(__dirname, "output");
+// const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
@@ -139,7 +139,8 @@ function addIntern() {
 
     var page = render(teamMembers)
 
-    fs.writeFile(outputPath, page)
+    fs.writeFile('output/team.html', page, (err) =>
+    err ? console.error(err) : console.log("Team profile created! Please navigate to 'output/team.html' for the results."))
 
     
   }
@@ -177,9 +178,10 @@ inquirer
   .then((response) => {
     const teamManager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNo)
 
+    console.log(teamManager);
+
     teamMembers.push(teamManager)
     printTeam()
-
     getOption()
 
   })
