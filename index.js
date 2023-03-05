@@ -139,8 +139,8 @@ function addIntern() {
 
     var page = render(teamMembers)
 
-    fs.writeFile('output/team.html', page, (err) =>
-    err ? console.error(err) : console.log("Team profile created! Please navigate to 'output/team.html' for the results."))
+    fs.writeFile("team.html", page, (err) =>
+    err ? console.error(err) : console.log("Team profile created! Please navigate to the output folder for the results."))
 
     
   }
