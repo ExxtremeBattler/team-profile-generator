@@ -22,6 +22,16 @@ const internQuestions = ["What's the name of this intern?", "The intern's id?", 
 
 var teamMembers = []
 
+function printTeam() {
+  console.log("The team members are currently : \n");
+
+
+  teamMembers.forEach(element => {
+    console.log(element.name +", " )
+  });
+  
+}
+
 function getOption(){
     inquirer.prompt([
         {
@@ -34,13 +44,13 @@ function getOption(){
         }
     ]).then((response) => {
         
-        if (response.selectedOption === "engineer") {
+        if (response.selectedOption.toLowerCase() === "engineer") {
             addEngineer()
         } 
-        else if (response.selectedOption === "intern") {
+        else if (response.selectedOption.toLowerCase() === "intern") {
             addIntern()
         }
-        else if (response.selectedOption === "finish"){
+        else if (response.selectedOption.toLowerCase() === "finish"){
             console.log("Very well! The team is complete.")
             buildPage()
         }
@@ -81,6 +91,8 @@ inquirer
     let engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub)
 
     teamMembers.push(engineer)
+    printTeam()
+    getOption()
 
   } 
 )}
@@ -116,6 +128,9 @@ function addIntern() {
       let intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool)
   
       teamMembers.push(intern)
+
+      printTeam()
+      getOption()
   
     } 
   )}
@@ -163,6 +178,7 @@ inquirer
     const teamManager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNo)
 
     teamMembers.push(teamManager)
+    printTeam()
 
     getOption()
 
