@@ -33,6 +33,10 @@ The program will first ask for information regarding the team manager (and also 
 
 After the user chooses to finish, the webpage will be built under output/team.html, and the display can be opened in a browser of the user's choosing.
 
+Here is a sample webpage generated with the app:
+
+![911bf9116fe7b52913e721ebcde2eb4f](https://user-images.githubusercontent.com/69109391/223116907-d0ef8519-7684-40e1-8cf1-c794e98f22dc.png)
+
 
 ## Credits
 
