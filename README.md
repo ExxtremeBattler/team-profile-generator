@@ -1,5 +1,13 @@
 # Team Profile Generator
 
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
 ## Description
 
 The purpose of this project was to build a program that displays a team's basic info , given some information from the user.
