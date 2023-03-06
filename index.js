@@ -139,7 +139,7 @@ function addIntern() {
 
     var page = render(teamMembers)
 
-    fs.writeFile("team.html", page, (err) =>
+    fs.writeFile("output/team.html", page, (err) =>
     err ? console.error(err) : console.log("Team profile created! Please navigate to the output folder for the results."))
 
     
@@ -177,8 +177,6 @@ inquirer
   ])
   .then((response) => {
     const teamManager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNo)
-
-    console.log(teamManager);
 
     teamMembers.push(teamManager)
     printTeam()
